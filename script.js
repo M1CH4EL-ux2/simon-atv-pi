@@ -4,17 +4,16 @@ const responsePc = []
 
 let level = 1
 
-const start
-
 const randomPcResponse = () => {
     for(let i = 0; i < level; i++) {
         index = Math.floor(Math.random() * 4)
         idValue = buttons[index].id
 
         responsePc.push(idValue)
-        console.log(responsePc)
     }
 }
+
+
 
 const blinker = () => {
     const blink = responsePc[0]
@@ -24,14 +23,13 @@ const blinker = () => {
 const win = () => {
     console.log('win')
     level++
+    start()
 }
 
 const loose = () => {
     console.log('You loose')
     level = 1
 }
-
-randomPcResponse()
 
 buttons[0].addEventListener('click', () => {
     response.push('topleft')
@@ -93,4 +91,12 @@ const isValid = (responsePlayer, responsePcPlayer) => {
     }
 }
 
-blinker()
+const start = () => {
+    randomPcResponse()
+    blinker()
+}
+
+document.getElementById('start')
+    .addEventListener('click', () => {
+        start()
+    })
