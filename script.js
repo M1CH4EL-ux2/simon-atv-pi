@@ -1,4 +1,12 @@
+// Controle de inicialização do jogo
+const buttonStart = document.getElementById('start')
+const buttonOn = document.getElementById('on')
+const buttonStrict = document.getElementById('strict')
+
+//Controles dos botões coloridos
 const buttons = document.getElementsByClassName('options');
+
+// 
 const response = []
 const responsePc = []
 
@@ -13,8 +21,7 @@ const randomPcResponse = () => {
     }
 }
 
-
-
+// Ao invés disso, crie uma função particular para que cada um brile, use setTimeOut e IF para receber cada blinker
 const blinker = () => {
     const blink = responsePc[0]
     document.getElementById(`${blink}`).classList.add('blinkeding')
